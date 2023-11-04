@@ -1,22 +1,21 @@
 package com.messenger.database;
 
 import jakarta.persistence.*;
-
-import java.util.Objects;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "users", schema = "public", catalog = "postgres")
 public class UsersEntity {
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "user name")
+    @Column(name = "username")
     private String userName;
     @Basic
-    @Column(name = "first name")
-    private String firstName;
-    @Basic
-    @Column(name = "last name")
-    private String lastName;
+    @Column(name = "password")
+    private String password;
 }

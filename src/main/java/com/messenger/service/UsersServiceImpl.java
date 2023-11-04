@@ -6,7 +6,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UsersServiceImpl implements UsersService{
-    UsersRepository usersRepository;
+     private final UsersRepository usersRepository;
+
+    public UsersServiceImpl(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
 
     @Override
     public UsersEntity registerUser(UsersEntity user){
