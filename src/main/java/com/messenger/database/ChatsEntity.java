@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -15,9 +15,12 @@ public class ChatsEntity {
     @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "chat name")
+    @Column(name = "chat_name")
     private String chatName;
     @Basic
-    @Column(name = "member ID")
-    private Object memberId;
+    @Column(name = "chat_members")
+    private int[] memberIds;
+    @Basic
+    @Column(name = "create_time")
+    private LocalDateTime createTime;
 }

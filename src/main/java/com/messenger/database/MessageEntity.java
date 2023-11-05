@@ -5,23 +5,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "message", schema = "public", catalog = "postgres")
+@Table(name = "messages", schema = "public", catalog = "postgres")
 public class MessageEntity {
     @Id
     @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "chat ID")
+    @Column(name = "chat_id")
     private Integer chatId;
     @Basic
-    @Column(name = "body")
+    @Column(name = "message_body")
     private String body;
     @Basic
     @Column(name = "time")
     private Timestamp time;
+    @Basic
+    @Column(name="sender_id")
+    private int senderId;
 }
