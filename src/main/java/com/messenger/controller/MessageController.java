@@ -15,7 +15,7 @@ public class MessageController {
         this.messageService = messageService;
     }
 
-    @PostMapping("sendMessage")
+    @PostMapping("/sendMessage")
     ResponseEntity<MessageEntity> sendMessage(@RequestBody MessageEntity message){
         MessageEntity newMessage=messageService.sendMessage(message);
         return ResponseEntity.ok(newMessage);

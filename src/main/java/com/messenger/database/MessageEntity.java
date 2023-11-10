@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -12,6 +12,8 @@ import java.sql.Timestamp;
 @Table(name = "messages", schema = "public", catalog = "postgres")
 public class MessageEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "messages_id_seq")
+    @SequenceGenerator(name = "messages_id_seq", sequenceName = "messages_id_seq", allocationSize = 1)
     @Column(name = "id")
     private int id;
     @Basic
@@ -21,8 +23,8 @@ public class MessageEntity {
     @Column(name = "message_body")
     private String body;
     @Basic
-    @Column(name = "time")
-    private Timestamp time;
+    @Column(name = "time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime time;
     @Basic
     @Column(name="sender_id")
     private int senderId;

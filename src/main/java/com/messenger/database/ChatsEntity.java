@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 @Table(name = "chats", schema = "public", catalog = "postgres")
 public class ChatsEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "chat_id_seq")
+    @SequenceGenerator(name = "chat_id_seq", sequenceName = "chat_id_seq", allocationSize = 1)
     @Column(name = "id")
     private int id;
     @Basic
@@ -21,6 +23,6 @@ public class ChatsEntity {
     @Column(name = "chat_members")
     private int[] memberIds;
     @Basic
-    @Column(name = "create_time")
+    @Column(name = "create_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createTime;
 }
