@@ -14,7 +14,7 @@ public class UsersEntity {
     private int id;
     @Basic
     @Column(name = "username")
-    private String userName;
+    private String userame;
     @Basic
     @Column(name = "password")
     private String password;
