@@ -23,6 +23,6 @@ public class ChatsEntity {
     @Column(name = "chat_members")
     private int[] memberIds;
     @Basic
-    @Column(name = "create_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "create_time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false)
     private LocalDateTime createTime;
 }

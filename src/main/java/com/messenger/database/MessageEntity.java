@@ -23,7 +23,7 @@ public class MessageEntity {
     @Column(name = "message_body")
     private String body;
     @Basic
-    @Column(name = "time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "time", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false)
     private LocalDateTime time;
     @Basic
     @Column(name="sender_id")
