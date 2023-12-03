@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = "com.messenger.security.SecurityConfig")
+//@ComponentScan(basePackages = "com.messenger.security")
 public class MessengerApplication {
 
     public static void main(String[] args) {
