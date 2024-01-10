@@ -15,6 +15,10 @@ public class UsersServiceImpl implements UsersService{
         this.passwordEncoder = passwordEncoder;
     }
 
+    public UsersEntity authorize(UsersEntity user){
+        return null;
+    }
+
     @Override
     public UsersEntity registerUser(UsersEntity user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
