@@ -32,7 +32,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-        @Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
                 .csrf().disable()
@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .formLogin()
                 .loginPage("/login.html").successForwardUrl("/")
                 .and()
-            .httpBasic();
+                .httpBasic();
         return http.build();
     }
 

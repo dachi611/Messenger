@@ -11,16 +11,16 @@ import org.springframework.stereotype.Service;
 
 public class MessageServiceImpl implements MessageService{
     private final MessageRepository messageRepository;
-    private final SecUser secUser;
+//    private final SecUser secUser;
 
-    public MessageServiceImpl(MessageRepository messageRepository, SecUser secUser) {
+    public MessageServiceImpl(MessageRepository messageRepository/*, SecUser secUser*/) {
         this.messageRepository = messageRepository;
-        this.secUser = secUser;
+//        this.secUser = secUser;
     }
 
     @Override
     public MessageEntity sendMessage(MessageEntity message) {
-        message.setSenderId(secUser.getId());
+//        message.setSenderId(secUser.getId());
         return messageRepository.save(message);
     }
     public Page<MessageEntity> getMessages(Pageable pageable){
