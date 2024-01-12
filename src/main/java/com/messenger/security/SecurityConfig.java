@@ -38,11 +38,11 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("/login.html", "/register").permitAll()
-                //.requestMatchers("/index.html").authenticated()
+                .requestMatchers("/index.html").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login.html").successForwardUrl("/")
+//                .loginPage("/login.html").successForwardUrl("/")
                 .and()
                 .httpBasic();
         return http.build();
